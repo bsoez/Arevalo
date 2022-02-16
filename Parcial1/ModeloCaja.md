@@ -14,7 +14,7 @@ A todas las cajas se les puede aplicar las siguientes propiedades: width, height
 
 * El **Contenido**
 
-<img src = "https://scontent.fnld1-1.fna.fbcdn.net/v/t1.15752-9/272434713_932191060793800_5686843304390457539_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeGxaHptf4GNrWjaXa6cLRXJCqA-q-QZxzIKoD6r5BnHMthRQZa2sND28uKRg-ZtazrDh174k0hvcK4M-Plv4akh&_nc_ohc=tzyoWThACBYAX94mbLZ&_nc_ht=scontent.fnld1-1.fna&oh=03_AVIKi2AIG3fpBDrQYqxavDEH7yl5-kajBjMK0HYnRWZ8cA&oe=6233EE9E">
+<img src = "https://scontent.fnld1-1.fna.fbcdn.net/v/t1.15752-9/272664561_1875482186173278_5072860416064226608_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHv4HfkHAZ46k9vF0JGp91rXQEpzSoZt41dASnNKhm3jTJb9mrqxJHQ2E7WdMgFahCGcwJOTdQjM0ADg9TLJzTt&_nc_ohc=rSc52DTFkrIAX-9byBf&_nc_ht=scontent.fnld1-1.fna&oh=03_AVIjCiPhPClw4-bWMbdriYpv_rJx4P1jOpHJF1xknSmEQA&oe=6233D4E8">
 
 **Medidas flexibles:**
 
