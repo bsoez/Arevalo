@@ -14,7 +14,7 @@ A todas las cajas se les puede aplicar las siguientes propiedades: width, height
 
 * El **Contenido**
 
-<img src = "https://www.oscarblancarteblog.com/wp-content/uploads/2017/10/MoxModel-secciones.png">
+<img src = "https://scontent.fnld1-1.fna.fbcdn.net/v/t1.15752-9/263599991_529028995125214_2525553915495263538_n.png?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFCJFsDi0-qVxkWPl1wZovKJn9ZYAQK9KYmf1lgBAr0pinscD4Iz4mcyMIuTUjefdFVQxTS_WGPQM91tQF0_BBI&_nc_ohc=RYGFaX6Nt6QAX-mpinq&_nc_ht=scontent.fnld1-1.fna&oh=03_AVLfqxun2ANDnTW9Hz8Lh4SoN3FWzmBzRcKPoaqITNSv1Q&oe=623284B2">
 
 **Medidas flexibles:**
 
