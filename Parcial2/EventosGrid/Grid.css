@@ -14,14 +14,24 @@
     grid-template-columns: 200px 200px 200px;
     grid-template-rows: 200px 200px 200px;
 
-    
+    align-items: center;
+    grid-auto-flow: dense;
+    justify-items: center;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
 .caja{
-    background-color: rgb(255, 0, 128);
-   text-align: center;
-   border: 1px solid blue;
 
+width: 150px;
+height: 150px;
+
+background-color: rgb(255, 0, 128);
+text-align: center;
+border: 1px solid blue;
+
+}
+
+.cajaRoja{
+    background-color: red;
 }
