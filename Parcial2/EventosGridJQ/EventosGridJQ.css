@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    width: 100vw;
+    height:100vh;
+    background-color: rgb(243, 189, 207);
+
+
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+
+    align-items: center;
+    grid-auto-flow: dense;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja{
+
+width: 150px;
+height: 150px;
+
+background-color: rgb(255, 0, 128);
+text-align: center;
+border: 1px solid blue;
+
+}
+
+.cajaRoja{
+    background-color: red;
+}
