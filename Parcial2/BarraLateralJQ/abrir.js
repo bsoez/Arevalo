@@ -7,11 +7,16 @@
  // console.log(document.getElementById('sidebar'))
 //});
 
-$(document).ready(function(){
+//$(document).ready(function(){
 
-  $(".toggle-btn").click(alternarMenu);
-    function alternarMenu(){
-      $("#sidebar").toggleClass("active");
-    }
+//  $(".toggle-btn").click(alternarMenu);
+//    function alternarMenu(){
+//      $("#sidebar").toggleClass("active");
+//    }
 
+//});
+
+
+$('.menu-bar').on('click', function(){
+  $('.contenido').toggleClass('abrir');
 });
