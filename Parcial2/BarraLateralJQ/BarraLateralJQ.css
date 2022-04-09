@@ -26,6 +26,7 @@ margin: 0;
 
 .sidebar li{
   outline:1px solid #2a2a2a;
+  transition: all 0.3s;
 }
 
 .sidebar li:hover{
