@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registro Bootstrap</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="FormModal.js"></script> 
+        
+    </head>
+    <body>
+        <div class="container">
+            <form class="form">
+                <h1 class="h3 mb-3 font-weight-normal">Registro de videojuegos</h1>
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                        <label for="idjuego" class="control-label" >ID DEL JUEGO</label>
+                        <input id="idjuego" type="text" class="form-control" placeholder="#12667"/>
+
+                    </div>
+                    <div class="form-group col-sm-12 col-md-8 col-lg-10">
+                        <label for="nomJuego" class="control-label" >NOMBRE DEL VIDEOJUEGO</label>
+                        <input id="nomJuego" type="text" class="form-control" placeholder="Nombre del videojuego"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-8 col-lg-10">
+                        <label for="Categoria" class="control-label" >CATEGORIA</label>
+                        <input id="Categoria" type="text" class="form-control" placeholder="Terror, fantasia, historia, supervivencia, etc"/>
+
+                    </div>
+                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                        <label for="anioJuego" class="control-label" >AÑO DE ESTRENO</label>
+                        <input id="anioJuego" type="text" class="form-control" placeholder="2001"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-5 col-lg-7">
+                        <label for="nomComp" class="control-label" >COMPAÑIA CREADORA</label>
+                        <input id="nomComp" type="text" class="form-control" placeholder="Activision, Epic games, Red barrel, "/>
+
+                    </div>
+                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                        <label for="precioJuego" class="control-label" >PRECIO</label>
+                        <input id="precioJuego" type="text" class="form-control" placeholder="$59.99"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-4 col-lg-8">
+                        <label for="descripcion" class="control-label" >BREVE DESCRIPCIÓN </label>
+                        <input id="descripcion" type="text" class="form-control" placeholder="Trata de sobrevivir en un mundo abierto con dragones... "/>
+
+                    </div>
+                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                        <label for="ultimaVersion" class="control-label" >ULTIMA VERSIÓN</label>
+                        <input id="ultimaVersion" type="text" class="form-control" placeholder="3.1"/>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                    Modal con atributos
+                  </button>
+                  <button id="btnAlerta" type="button" class="btn btn-primary">Alerta</button>                
+                  <button id="btnJS" type="button" class="btn btn-primary">JS</button>
+                  <button id="btnSw" type="button" class="btn btn-primary">Sweet</button>
+                  <button id="btnLimpiar" type="button" class="btn btn-primary">Limpiar</button>                
+
+                  <div id="ventanaAlerta" class="alert alert-primary-alert-dismissible collapse" role="alert">
+                    A simple primary alert—check it out!
+                    <button id="botonCerrarAlerta" type="button" class="close"
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+        
+                  <!-- Modal -->
+                  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="staticBackdropLabel">Modal</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                          
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+              
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Alert!</strong> You should check in on some of those fields below.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>
