@@ -117,22 +117,19 @@
     <script>
         $('#btnSw').click(function(){
             Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-            if (result.isConfirmed) {
-            Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-        )
-    }
+            title: 'Nyan cat alert :)',
+            width: 600,
+            padding: '3em',
+            color: '#716add',
+            background: '#fff url(/images/trees.png)',
+            backdrop: `
+            rgba(0,0,123,0.4)
+            url("https://c.tenor.com/Pbg21g0u6E0AAAAd/nyan-cat-gif.gif")
+            left top
+            no-repeat
+            `
+        })
 })
-    })
+     
     </script>
 </html>
