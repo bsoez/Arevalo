@@ -13,7 +13,7 @@ $(document).ready(function(){
     });
 
     $('#btnSw').click(function(){
-        swal({
+        Swal.fire({
             title: "Good job!",
             text: "Hiciste click en el boton",
             icon: "Success",
