@@ -1,18 +1,18 @@
-# Promise - JavaScript ⛓
+# Promesas - JavaScript ⛓
 
-The *Promise* object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+El objeto *Promise* representa la eventual finalización (o falla) de una operación asincrónica y su valor resultante.
 
-A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+Una Promesa es un proxy de un valor que no necesariamente se conoce cuando se crea la promesa. Le permite asociar controladores con el valor eventual de éxito o el motivo de falla de una acción asíncrona. Esto permite que los métodos asíncronos devuelvan valores como los métodos síncronos: en lugar de devolver inmediatamente el valor final, el método asíncrono devuelve la promesa de proporcionar el valor en algún momento en el futuro.
 
-A Promise is in one of these states:
+Una Promesa está en uno de estos estados:
 
-- pending: initial state, neither fulfilled nor rejected.
-- fulfilled: meaning that the operation was completed successfully.
-- rejected: meaning that the operation failed.
+- pendiente: estado inicial, ni cumplida ni rechazada.
+- cumplida: significa que la operación se completó con éxito.
+- rechazado: lo que significa que la operación falló.
 
-A pending promise can either be fulfilled with a value or rejected with a reason (error). When either of these options happens, the associated handlers queued up by a promise's then method are called. If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.
+Una promesa pendiente puede cumplirse con un valor o rechazarse con un motivo (error). Cuando ocurre cualquiera de estas opciones, se llama a los controladores asociados en cola por el método entonces de una promesa. Si la promesa ya se ha cumplido o rechazado cuando se adjunta un controlador correspondiente, se llamará al controlador, por lo que no existe una condición de carrera entre la finalización de una operación asíncrona y la conexión de sus controladores.
 
-As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained.
+Como los métodos Promise.prototype.then() y Promise.prototype.catch() devuelven promesas, se pueden encadenar.
 
 ---
 
@@ -22,9 +22,9 @@ Las Promesas en JavaScript son acciones que se resolverán a futuro (cuando se p
 
 Fuentes de información:
 
-[Source 1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+[fuente 1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-[Source 2](https://www.arsys.es/blog/promesas-javascript#:~:text=Las%20Promesas%20en%20JavaScript%20son,cabo%20con%20%C3%A9xito%20o%20no.)
+[fuente 2](https://www.arsys.es/blog/promesas-javascript#:~:text=Las%20Promesas%20en%20JavaScript%20son,cabo%20con%20%C3%A9xito%20o%20no.)
 
 María Belén Arévalo Esquivel
 
