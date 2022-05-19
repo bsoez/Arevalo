@@ -5,23 +5,21 @@ window.onload = function() {
     
     
     function pedirHeader() {
-    
-    
-    } var solicitud = new XMLHttpRequest();          //Crear objeto XMLHttpRequest
-    
-    solicitud.onreadystatechange = function() {   // En esta propiedad declaramos la funcion a ejecutar
-                                                // cuando cambie el status del objeto XMLHttpRequest
-    
-        if (solicitud.readyState == 4 && solicitud.status == 200) {                 // La respueta esta lista
-            document.getElementById("encabezado").innerHTML = solicitud.responseText;  // La propiedad responseText tiene la respuesta en texto
-    }};
-    
-    solicitud.open("GET", "getHeader.txt", true);
-    solicitud.send();
-    
+        
+        let promesa = new Promise(function(resolve,reject){
+            var solicitud = new XMLHttpRequest();
+            solicitud.onreadystatechange = function(){
+        
+                if(solicitud.readyState == 4 && solicitud.status == 200){
+                    resolve(solicitud.responseText);
+                }};
+                solicitud.open("GET","getHeader.txt", true);
+                solicitud.send();
+        });
+        promesa.then(value => document.getElementById("encabezado").innerHTML = value);
      }
-    
-    function iniciarHeader() {
-        document.getElementById("encabezado").innerHTML = "<h2>Este es un Header nivel 22<h2>"; 
-    }
-    
+     function iniciarHeader() {
+        document.getElementById("encabezado").innerHTML = "<h2>Registro de VJ<h2>"; 
+  
+    } 
+}
