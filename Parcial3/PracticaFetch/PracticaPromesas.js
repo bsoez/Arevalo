@@ -22,3 +22,10 @@ window.onload = function() {
         document.getElementById("encabezado").innerHTML = "<h2>Registro de VJ<h2>"; 
     } 
 }
+
+document.getElementById("btnFetch").addEventListener("click",function(){
+            
+    let promise = fetch('peticion.php');
+
+    promise.then(respuesta => respuesta.json()).then(datos => console.log(datos));
+});
