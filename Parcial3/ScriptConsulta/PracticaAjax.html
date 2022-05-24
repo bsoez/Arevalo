@@ -10,16 +10,19 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         
-        <script src="fetch.js"></script>
         
-
     </head>
-
     <body>
 
+        <header>
+            <div> 
+            <h1 id="encabezado" >Registro de videojuegos</h1>
+            </div>
+
+        </header>
         <div class="container">
             <form class="form">
-                <div id="encabezado"> <h1 class="h3 mb-3 font-weight-normal">Registro de videojuegos</h1> </div>
+                <h1 class="h3 mb-3 font-weight-normal">Registro de videojuegos</h1>
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-4 col-lg-2">
                         <label for="idjuego" class="control-label" >ID DEL JUEGO</label>
@@ -76,10 +79,8 @@
                   <button id="btnSw" type="button" class="btn btn-primary">Sweet</button>
                   <button id="btnAjax" type="button" class="btn btn-primary">Cambiar header</button>
                   <button id="btnJson" type="button" class="btn btn-primary">JSON</button>
-                  <button id="btnPromesa" type="button" class="btn btn-primary">Cambiar el header con promesa</button>
-                  <button id="btnFetch" type="button" class="btn btn-primary">Obtiene JSON con fetch</button>
 
-
+                              
 
                   <div id="ventanaAlerta" class="alert alert-primary-alert-dismissible collapse" role="alert">
                     A simple primary alert—check it out!
@@ -170,40 +171,7 @@
                 $('#Descripcion').val(data.Descripcion);
                 $('#ultimaVersion').val(data.ultimaVersion);
             },'json');
-        });
+            });
 
-      //  $('#btnPromesa').click(function(){
-      //      let promesa = new Promise(function(resolve,reject){
-        //        var solicitud = new XMLHttpRequest();
-          //      solicitud.onreadystatechange = function(){
-            //        if(solicitud.readyState == 4 && solicitud.status == 200){
-              //          resolve(solicitud.responseText);
-                //    }};
-                  //  solicitud.open("GET","getHeader.txt",true);
-                    //solicitud.send();
-             // });
-        //});
-        //promesa.then(function(value){document.getElementById("encabezado").innerHTML=value;});
-        //promesa.then((value)=>{document.getElementById("encabezado").innerHTML=value});
-        //promesa.then(value => document.getElementById("encabezado").innerHTML= value);
-        
-
-        $('#btnFetch').click(function(){
-        console.log("HOLA");
-        fetch('getRegistro.php')
-        .then( respuesta => respuesta.json())
-        .then(function(dato){refrescar(dato)});
-        });
-
-        function refrescar(data){
-          $('#idjuego').val(data.idjuego);
-          $('#nomJuego').val(data.nomJuego);
-          $('#Categoria').val(data.Categoria);
-          $('#anioJuego').val(data.anioJuego);
-          $('#nomComp').val(data.nomComp);
-          $('#precioJuego').val(data.precioJuego);
-          $('#Descripcion').val(data.Descripcion);
-          $('#ultimaVersion').val(data.ultimaVersion);
-      }
     </script>
 </html>
