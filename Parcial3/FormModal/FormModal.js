@@ -8,7 +8,7 @@ $(document).ready(function(){
     });
 
     $('#btnJS').click(function(){
-        $('.modal-body'.text("Se ha activado el boton");
+        $('.modal-body'.text("Se ha activado el boton"));
         $('#ventanaM').modal();
     });
 
@@ -19,7 +19,12 @@ $(document).ready(function(){
             icon: "Success",
         });
     });
+
+    $('#closemodal').click(function(){
+        $('#modalid').hide();
+    })
 });
+
 
 $('#btnJS').click(function(){
     $('.modal-body').text("Se ha activado el botón");

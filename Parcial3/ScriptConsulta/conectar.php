@@ -1,7 +1,7 @@
 <?php
 
 $hostname= 'localhost';
-$database= 'asp';
+$database= 'n19100144';
 $username= 'root';
 $password= '';
 

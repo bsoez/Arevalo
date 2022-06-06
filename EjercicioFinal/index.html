@@ -1,0 +1,187 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registro Bootstrap</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+       
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <form class="form">
+                <div id="encabezado"> <h1 class="h3 mb-3 font-weight-normal">Registro de videojuegos</h1> </div>
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                        <label for="idjuego" class="control-label" >ID DEL JUEGO</label>
+                        <input id="idjuego" type="text" class="form-control" placeholder="#12667"/>
+
+                    </div>
+                    <div class="form-group col-sm-12 col-md-8 col-lg-10">
+                        <label for="nomJuego" class="control-label" >NOMBRE DEL VIDEOJUEGO</label>
+                        <input id="nomJuego" type="text" class="form-control" placeholder="Nombre del videojuego"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-8 col-lg-10">
+                        <label for="Categoria" class="control-label" >CATEGORIA</label>
+                        <input id="Categoria" type="text" class="form-control" placeholder="Terror, fantasia, historia, supervivencia, etc"/>
+
+                    </div>
+                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                        <label for="anioJuego" class="control-label" >AÑO DE ESTRENO</label>
+                        <input id="anioJuego" type="text" class="form-control" placeholder="2001"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-5 col-lg-7">
+                        <label for="nomComp" class="control-label" >COMPAÑIA CREADORA</label>
+                        <input id="nomComp" type="text" class="form-control" placeholder="Activision, Epic games, Red barrel, "/>
+
+                    </div>
+                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                        <label for="precioJuego" class="control-label" >PRECIO</label>
+                        <input id="precioJuego" type="text" class="form-control" placeholder="$59.99"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-4 col-lg-8">
+                        <label for="descripcion" class="control-label" >BREVE DESCRIPCIÓN </label>
+                        <input id="descripcion" type="text" class="form-control" placeholder="Trata de sobrevivir en un mundo abierto con dragones... "/>
+
+                    </div>
+                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                        <label for="ultimaVersion" class="control-label" >ULTIMA VERSIÓN</label>
+                        <input id="ultimaVersion" type="text" class="form-control" placeholder="3.1"/>
+                    </div>
+                </div>
+                
+               
+              
+                  <button id="btnAgregar" type="button" class="btn btn-primary">Agregar</button>
+                  <button id="btnBuscar" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data class="btn btn-primary">Buscar</button>
+                  <button id="btnEliminar" type="button" class="btn btn-primary">Eliminar</button>
+                  <button id="btnEditar" type="button" class="btn btn-primary">Editar</button>                  
+
+                 <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+              
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="staticBackdropLabel">Modal</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        Ingrese el id del juego
+                        <input id="id_consulta" type="text" class="form-control" placeholder="0">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" id="btnidBuscar" class="btn btn-secondary" data-dismiss="modal">Buscar</button>
+
+                            
+                          <button type="button" class="btn btn-primary">Cerrar</button>
+                          
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+               
+            </form>
+        </div>
+    </body>
+
+    <script>
+
+      // consulta en BD
+      $('#btnBuscar').click(function(){
+
+        $('#modal1').modal();
+        console.log("kk");
+        $('#btnidBuscar').click(function(){
+            let varid = $('#id_consulta').val();
+          $.post('./php/consulta.php',{par1:varid},function(){
+            refrescar(data);
+            }, 'json');
+        });
+        
+        });
+
+
+        $('#btnJson').click(function(){
+            $.post('getregistro.php',{},function(data){
+
+                console.log(data);
+                $('#idjuego').val(data.idjuego);
+                $('#nomJuego').val(data.nomJuego);
+                $('#Categoria').val(data.Categoria);
+                $('#anioJuego').val(data.anioJuego);
+                $('#nomComp').val(data.nomComp);
+                $('#precioJuego').val(data.precioJuego);
+                $('#Descripcion').val(data.Descripcion);
+                $('#ultimaVersion').val(data.ultimaVersion);
+            },'json');
+        });
+
+        
+     
+        $('#btnAgregar').click(function(){
+        let idjuego = document.getElementById("idJuego").value;
+        let nomJuego = document.getElementById("nomJuego").value;
+        let Categoria = document.getElementById("Categoria").value;
+        let anioJuego = document.getElementById("anioJuego").value;
+        let nomComp = document.getElementById("nomComp").value;
+        let precioJuego = document.getElementById("PrecioJuego").value;
+        let Descripcion = document.getElementById("Descripcion").value;
+        let ultimaVersion = document.getElementById("ultimaVersion").value;
+        let opcionUser = 'agregar';
+
+        $.post('peticion.php',{idjuego:idjuego,opcion:opcionUser,nomJuego:nomJuego,Categoria:Categoria,anioJuego:anioJuego,nomComp:nomComp,precioJuego:precioJuego,Descripcion:Descripcion,ultimaVersion:ultimaVersion},function(data){
+            document.querySelector('.modalBoxNotification').style.display = 'flex'
+            refrescar(data);
+          });
+        
+    });
+
+    </script>
+</html> 
