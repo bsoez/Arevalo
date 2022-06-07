@@ -1,57 +1,42 @@
 <?php
 
-
-
-$hostname='localhost';
-$database='n19100144';
-$username='root';
-$password='Belen123.';
-$port='3306';
-
-$paridCte=$_POST['par1'];
-$idjuego=$_POST['par2'];
+$id = $_POST['par2'];
 $nomJuego=$_POST['par3'];
 $Categoria=$_POST['par4'];
 $anioJuego=$_POST['par5'];
 $nomComp=$_POST['par6'];
 $precioJuego=$_POST['par7'];
-$Descripcion=$_POST['par8'];
+$descripcion=$_POST['par8'];
+$ultimaVersion=$_POST['par9'];
 
-$operacion;
+$hostname='localhost';
+$database='n19100144';
+$username='nuevo';
+$password='Belen123.';
+$port='3307';
 
-
-try {
+try{
     $con = new PDO("mysql:host=$hostname;dbname=$database",$username,$password);
-
-} catch (PDOException $e) {
-   echo "Error de conexion a la base de datos;";
-   echo $e->getMessage();
-   exit();
+} catch(PDOException $e){
+    echo $e->getMessage();
+    exit();
 }
 
-
-try {
-    if (!($paridCte == null) ) {
-    $consultaSql = "UPDATE videojuegos set 
-    
-    idjuego = '$idjuego', nomJuego = '$nomJuego', Categoria = '$Categoria', anioJuego = '$anioJuego', nomComp = '$nomComp',
-    precioJuego = '$precioJuego', Descripcion = '$Descripcion' where id= $paridCte ;";
-
+//$con->setAttribute(PDO::ATT_ERRMODE,PDO::ERRMODE_EXCEPTION);
+try{
+    //campos que vas a insertar
+    $consultaSql = "Update videojuegos SET nomJuego='$nomJuego', Categoria='$Categoria',anioJuego=$anioJuego, nomComp = '$nomComp', precioJuego = '$precioJuego', Descripcion = '$descripcion', ultimaVersion = $ultimaVersion where idJuego = $id;";
     $consulta = $con -> prepare($consultaSql);
     $consulta -> execute();
     $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
     $consulta->closeCursor();
-    $operacion=true;
-}
-else{
-    $operacion=false;
-}
-} 
-catch (PDOException $e) {
-echo "Error de consulta a la base de datos";
-echo $e->getMessage();
+
+}catch(PDOException $e){
+    echo "Error de la consulta";
+    echo $e->getMessage();
 
 }
 
-echo json_encode($operacion);
+$resultadoJSON = json_encode($resultado);
+echo $consultaSql;
 ?>

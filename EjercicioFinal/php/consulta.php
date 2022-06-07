@@ -1,15 +1,15 @@
 <?php
 
-$id = 2;
+$id = $_POST['par1'];
 
 $hostname = 'localhost';
 $database = 'n19100144';
-$username = 'newuser';
+$username = 'nuevo';
 $password = 'Belen123.';
-$port='3306';
+$port='3307';
 
 try{
-    $con = new PDO("mysql:host=$hostname;dbname=$database",$username,$passwword);
+    $con = new PDO("mysql:host=$hostname;dbname=$database",$username,$password);
 } catch(PDOException $e){
     echo "$password";
     echo $e->getMessage();
@@ -18,7 +18,7 @@ try{
 //$con->setAttribute(PDO::ATT_ERRMODE,PDO::ERRMODE_EXCEPTION);
 try{
    
-    $consultaSql = "Select idJuego,nomJuego,Categoria,anioJuego,nomComp,precioJuego,Descripcion,ultimaVersion from videojuegos where idNumero=" .$id;
+    $consultaSql = "SELECT * FROM n19100144.videojuegos where idjuego=" .$id;
     $consulta = $con -> prepare($consultaSql);
     $consulta -> execute();
     $resultado = $consulta->fetch(PDO::FETCH_ASSOC);

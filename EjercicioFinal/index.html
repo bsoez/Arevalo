@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-4 col-lg-2">
                         <label for="idjuego" class="control-label" >ID DEL JUEGO</label>
-                        <input id="idjuego" type="text" class="form-control" placeholder="#12667"/>
+                        <input id="idjuego" type="text" class="form-control" placeholder="#1, 2, 3, 4"/>
 
                     </div>
                     <div class="form-group col-sm-12 col-md-8 col-lg-10">
@@ -137,50 +137,125 @@
       $('#btnBuscar').click(function(){
 
         $('#modal1').modal();
-        console.log("kk");
+        console.log("prueba");
         $('#btnidBuscar').click(function(){
             let varid = $('#id_consulta').val();
-          $.post('./php/consulta.php',{par1:varid},function(){
+          $.post('./php/consulta.php',{par1:varid},function(data){
             refrescar(data);
             }, 'json');
+
+            console.log("prueba2");
+            $('#modal1').modal('hide');
+
         });
         
         });
 
+        function refrescar(data){
 
-        $('#btnJson').click(function(){
-            $.post('getregistro.php',{},function(data){
-
-                console.log(data);
-                $('#idjuego').val(data.idjuego);
+          $('#idjuego').val(data.idJuego);
                 $('#nomJuego').val(data.nomJuego);
                 $('#Categoria').val(data.Categoria);
                 $('#anioJuego').val(data.anioJuego);
                 $('#nomComp').val(data.nomComp);
                 $('#precioJuego').val(data.precioJuego);
-                $('#Descripcion').val(data.Descripcion);
+                $('#descripcion').val(data.Descripcion);
+                $('#ultimaVersion').val(data.ultimaVersion);
+        }
+
+        $('#btnJson').click(function(){
+            $.post('getregistro.php',{},function(data){
+
+                console.log(data);
+                $('#idjuego').val(data.idJuego);
+                $('#nomJuego').val(data.nomJuego);
+                $('#Categoria').val(data.Categoria);
+                $('#anioJuego').val(data.anioJuego);
+                $('#nomComp').val(data.nomComp);
+                $('#precioJuego').val(data.precioJuego);
+                $('#descripcion').val(data.Descripcion);
                 $('#ultimaVersion').val(data.ultimaVersion);
             },'json');
         });
 
         
-     
-        $('#btnAgregar').click(function(){
-        let idjuego = document.getElementById("idJuego").value;
-        let nomJuego = document.getElementById("nomJuego").value;
-        let Categoria = document.getElementById("Categoria").value;
-        let anioJuego = document.getElementById("anioJuego").value;
-        let nomComp = document.getElementById("nomComp").value;
-        let precioJuego = document.getElementById("PrecioJuego").value;
-        let Descripcion = document.getElementById("Descripcion").value;
-        let ultimaVersion = document.getElementById("ultimaVersion").value;
-        let opcionUser = 'agregar';
+       function Limpiar(){
 
-        $.post('peticion.php',{idjuego:idjuego,opcion:opcionUser,nomJuego:nomJuego,Categoria:Categoria,anioJuego:anioJuego,nomComp:nomComp,precioJuego:precioJuego,Descripcion:Descripcion,ultimaVersion:ultimaVersion},function(data){
-            document.querySelector('.modalBoxNotification').style.display = 'flex'
-            refrescar(data);
-          });
-        
+        document.getElementById('idJuego').value = "";
+        document.getElementById('nomJuego').value = "";
+        document.getElementById('Categoria').value = "";
+        document.getElementById('anioJuego').value= "";
+        document.getElementById('nomComp').value= "";
+        document.getElementById('precioJuego').value= "";
+        document.getElementById('descripcion').value= "";
+        document.getElementById('ultimaVersion').value= "";
+
+       };
+
+    $('#btnAgregar').click(function(){
+
+      
+      let nomJuego = document.getElementById('nomJuego').value;
+      let Categoria  = document.getElementById('Categoria').value;
+      let anioJuego = document.getElementById('anioJuego').value;
+      let nomComp = document.getElementById('nomComp').value;
+      let precioJuego = document.getElementById('precioJuego').value;
+      let descripcion = document.getElementById('descripcion').value;
+      let ultimaVersion = document.getElementById('ultimaVersion').value;
+
+      if(nomJuego ==="" || Categoria === "" || anioJuego === "" || nomComp === "" || precioJuego ==="" || descripcion ==="" || ultimaVersion ==="")
+      {
+        alert("LLene todos los datos");
+      }
+      else
+      {
+      $.post('./php/BotonAgregar.php',{par3:nomJuego,par4:Categoria,par5:anioJuego,par6:nomComp,par7:precioJuego, par8:descripcion,par9:ultimaVersion},function(data){
+       refrescar(data);  
+      },'json');
+      }
+      Limpiar();
+    });
+
+    $('#btnEditar').click(function(){
+
+      let id_bar = document.getElementById('idjuego').value;
+      let nomJuego = document.getElementById('nomJuego').value;
+      let Categoria  = document.getElementById('Categoria').value;
+      let anioJuego = document.getElementById('anioJuego').value;
+      let nomComp = document.getElementById('nomComp').value;
+      let precioJuego = document.getElementById('precioJuego').value;
+      let descripcion = document.getElementById('descripcion').value;
+      let ultimaVersion = document.getElementById('ultimaVersion').value;
+
+      if(id_bar === ""){
+        alert ("Primero has una consulta antes de editar.");
+      }
+      else{
+        $.post('./php/BotonEditar.php',{par2:id_bar,par3:nomJuego,par4:Categoria,par5:anioJuego,par6:nomComp,par7:precioJuego, par8:descripcion,par9:ultimaVersion},function(data){
+       refrescar(data);  
+      },'json');
+      Limpiar();
+      }
+
+    });
+
+    $('#btnEliminar').click(function(){
+      let bar = document.getElementById('idjuego').value;
+      console.log(bar);
+
+      if(bar === "")
+      {
+        alert("Haga una consulta de lo que desea eliminar");
+      }
+      else
+      {
+      let parid = document.getElementById('idjuego').value;
+      
+
+      $.post('./php/BotonEliminar.php',{par1:parid},function(data){
+       refrescar(data);  
+      },'json');
+      }
     });
 
     </script>
